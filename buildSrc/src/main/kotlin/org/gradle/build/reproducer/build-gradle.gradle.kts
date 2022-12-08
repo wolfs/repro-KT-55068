@@ -1,4 +1,4 @@
-import org.gradle.build.reproducer.BazelVersionBundle
+import org.gradle.build.reproducer.BuildToolVersionBundle
 
 val baseVersion = "1.7"
 val latestAgentVersion = "$baseVersion-prerelease"
@@ -6,7 +6,7 @@ val latestAgentVersion = "$baseVersion-prerelease"
 data class BuildScansBazelVersionBundle(
         val bazelVersion: Provider<String>,
         override val buildAgentVersions: List<String> = listOf(latestAgentVersion)
-) : BazelVersionBundle(
+) : BuildToolVersionBundle(
         bazelVersion
 ) {
     constructor(
